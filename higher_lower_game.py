@@ -1,4 +1,4 @@
-import art
+from art import logo, vs
 from game_data import data
 import random
 from replit import clear
@@ -14,7 +14,7 @@ def random_picker(list):
 pick_a = random_picker(data)
 
 # Generate Logo
-print(art.logo)
+print(logo)
 
 while not GAME_OVER:
 
@@ -34,7 +34,7 @@ while not GAME_OVER:
     # vs art
     # Random pick B
     print(f"Compare A: {pick_a['name']}, a {pick_a['description']}, from {pick_a['country']} - {pick_a['follower_count']}.")
-    print(art.vs)
+    print(vs)
     print(f"Against B: {pick_b['name']}, a {pick_b['description']}, from {pick_b['country']} - {pick_b['follower_count']}.")
 
     # Get the answer from user
