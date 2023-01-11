@@ -13,10 +13,10 @@ def random_picker(list):
 
 pick_a = random_picker(data)
 
-while not game_over:
+# Generate Logo
+print(art.logo)
 
-    # Generate Logo
-    print(art.logo)
+while not game_over:
 
     # First time pick the item randomely and stored in 2 different variables - (Call random_picker function)
     
@@ -45,6 +45,7 @@ while not game_over:
 
     # clear()
     clear()
+    print(art.logo)
 
     # if user answer right answer dictionary_b saved to dictionary_a variable and call the random_picker function and save the dictionary in dictionary_b variable
     # And score increase by 1
