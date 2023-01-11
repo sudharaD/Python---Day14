@@ -3,8 +3,8 @@ from game_data import data
 import random
 from replit import clear
 
-score = 0
-game_over = False
+SCORE = 0
+GAME_OVER = False
 
 # random_picker function - take the celebrety list as a attribute and randomely picked a item in the list and return it
 def random_picker(list):
@@ -16,11 +16,19 @@ pick_a = random_picker(data)
 # Generate Logo
 print(art.logo)
 
-while not game_over:
+while not GAME_OVER:
 
     # First time pick the item randomely and stored in 2 different variables - (Call random_picker function)
     
     pick_b = random_picker(data)
+    def equal_list_stopper(a, b, data):
+        """This will compare the 2 list and handle the if 2 lists are equal"""
+        while a == b:
+            b = random_picker(data)
+        return b
+
+    if pick_a == pick_b:
+        pick_b = equal_list_stopper(pick_a, pick_b, data)
 
     # Random pick A
     # vs art
@@ -50,13 +58,13 @@ while not game_over:
     # if user answer right answer dictionary_b saved to dictionary_a variable and call the random_picker function and save the dictionary in dictionary_b variable
     # And score increase by 1
     if (most_follower_account == pick_a and user_answer == "a") or (most_follower_account == pick_b and user_answer == "b"):
-        score += 1
+        SCORE += 1
         pick_a = pick_b
-        print(f"You're right! Current Score: {score}")
+        print(f"You're right! Current Score: {SCORE}")
     else:
         # if user wrong - clear(), message, score
-        print(f"Sorry, that's wrong. Final score: {score}")
-        game_over = True
+        print(f"Sorry, that's wrong. Final score: {SCORE}")
+        GAME_OVER = True
 
     # repeat the process
 
