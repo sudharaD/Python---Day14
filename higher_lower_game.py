@@ -53,7 +53,7 @@ while not GAME_OVER:
 
     # clear()
     clear()
-    print(art.logo)
+    print(logo)
 
     # if user answer right answer dictionary_b saved to dictionary_a variable and call the random_picker function and save the dictionary in dictionary_b variable
     # And score increase by 1
